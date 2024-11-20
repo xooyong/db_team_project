@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style/payment.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&display=swap" rel="stylesheet">
+    <title>결제 확인</title>
+    
+</head>
+<body>
+    <!-- 로고 텍스트 -->
+    <div class="logo">
+        <h1>티노 극장</h1>
+    </div>
+    <form action="{{ url_for('payment') }}">
+        <div class="container">
+            <h2>결제 확인</h2>
+            <div class="info">
+                <p><strong>영화 제목:</strong> <span>{{ title }}</span></p>
+                <p><strong>상영관:</strong> <span>{{ theater_id }}관</span></p>
+                <p><strong>선택한 좌석:</strong> <span>{{ selected_seats }}</span></p>
+                <p><strong>총 결제 금액:</strong> <span>{{ total_price }}원</span></p>
+            </div>
+            <div class="button-container">
+                <button onclick="confirmPayment()">결제하기</button>
+            </div>
+        </div>
+    </form>
+    <script>
+        function confirmPayment() {
+            alert('결제가 완료되었습니다!');
+            window.location.href = '/'; // 결제 완료 후 추가 동작 (예: 리다이렉트)
+        }
+    </script>
+</body>
+</html>
