@@ -1,0 +1,107 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.container {
+    position: relative;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+.info {
+    flex: 1;
+    text-align: left;
+}
+.info h3 {
+    margin-bottom: 10px;
+}
+.info p {
+    margin: 5px 0;
+    font-size: 16px;
+}
+.seats {
+    display: grid;
+    grid-template-columns: repeat(5, 50px);
+    grid-gap: 10px;
+    position: relative;
+}
+.seat {
+    width: 50px;
+    height: 50px;
+    background-color: #007bff;
+    color: #fff;
+    font-size: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    cursor: pointer;
+    user-select: none;
+}
+.seat.selected {
+    background-color: #28a745;
+}
+.screen {
+    position: absolute;
+    top: -70px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 50px;
+    color: rgba(0, 0, 0, 0.1);
+    font-weight: bold;
+}
+.details {
+    flex: 1;
+    text-align: left;
+}
+.details h3 {
+    margin-bottom: 10px;
+}
+.details ul {
+    list-style-type: none;
+    padding: 0;
+}
+.details ul li {
+    margin: 5px 0;
+    font-size: 16px;
+}
+.details p {
+    margin: 5px 0;
+    font-size: 16px;
+    font-weight: bold;
+}
+.details button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+.details button:hover {
+    background-color: #0056b3;
+}
+
+/* 로고 텍스트 */
+.logo {
+    position: absolute; /* 페이지의 절대 위치 지정 */
+    top: 20px; /* 페이지 위쪽에서 20px 아래로 이동 */
+    left: 20px; /* 페이지 왼쪽에서 20px 오른쪽으로 이동 */
+    font-family: 'Bagel Fat One', cursive;
+    font-size: 1rem;
+    color: rgb(39, 179, 235);
+    margin: 0;
+}
