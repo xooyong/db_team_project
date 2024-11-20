@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style/theater_selection.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&display=swap" rel="stylesheet">
+    <title>영화 예매</title>
+</head>
+<body>
+    <!-- 로고 텍스트 -->
+    <div class="logo">
+        <h1>티노 극장</h1>
+    </div>
+    <div class="container">
+        <h2>영화 예매</h2>
+        <form action="{{ url_for('submit') }}" method="POST">
+            <div class="form-group">
+                <label for="date">날짜 선택</label>
+                <input type="date" id="date" name="date" required>
+            </div>
+            <div class="form-group">
+                <label for="theater">상영관 선택</label>
+                <select id="theater" name="theater" required>
+                    <option value="1">1관</option>
+                    <option value="2">2관</option>
+                    <option value="3">3관</option>
+                    <option value="4">4관</option>
+                    <option value="5">5관</option>
+                    <option value="6">6관</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="time">시간 선택</label>
+                <select id="time" name="time" required>
+                    <option value="10:00">10:00</option>
+                    <option value="12:00">12:00</option>
+                    <option value="14:00">14:00</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <button type="submit">확인</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
