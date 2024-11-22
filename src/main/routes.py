@@ -155,11 +155,12 @@ def payment():
             max_payment_id += 1  # 기존 ID에서 1 증가
         cur.execute(sql, (max_payment_id, customer_id, payment_date, amount))
         db.commit()
-        update_reservation(year, month, day)
+        update_reservation(year, month, day)    
     except Exception as e:
         db.rollback()
         return f"데이터베이스 삽입 오류: {str(e)}"
-            
+    
+    session.clear()        
     return render_template('login.html')
 
 def update_reservation(year, month, day):
@@ -179,6 +180,7 @@ def update_reservation(year, month, day):
         else:
             max_reservation_id += 1
         
+        # 예매 테이블 삽입
         sql = """INSERT INTO reservation (ReservationID, CustomerID, MovieID, TheaterID, SeatID, ReservationDate)
                     VALUES (%s, %s, %s, %s, %s, %s)"""
         cur.execute(sql, (max_reservation_id,
@@ -188,5 +190,4 @@ def update_reservation(year, month, day):
                         seatId,
                         reservation_date))
         db.commit()
-        session.clear()
-    return render_template('login.html')
+        return
